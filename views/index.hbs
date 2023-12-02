@@ -1,0 +1,73 @@
+    <div class='marketing'>
+	<div class='row featurette'>
+		<div class='col-md-7 mt-10rem'>
+			<h2 class='featurette-heading fw-normal lh-1'> This online market contains household appliances
+			</h2>
+			<p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quisquam, amet tenetur alias voluptate et impedit corrupti dolore. Ipsam assumenda repellendus expedita eius voluptatum hic veritatis, nesciunt cum aperiam esse veniam delectus minus. Quia numquam architecto consequatur delectus, perferendis dignissimos ipsa iure sapiente atque vero quas velit recusandae, molestias eaque?</p>
+		</div>
+		<div class='col-md-5'>
+			<img src='/pic1.png' width='100%' />
+		</div>
+	</div>
+</div>
+<hr class='featurette-divider' />
+<div class='row featurette'>
+</div>
+<hr class='featurette-divider' />
+    {{#if products.length}}
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-3">
+    
+        {{#each products}}
+
+         <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{image}}">
+            <div class="card-body">
+              <p class="card-text fs-5">{{title}}</p>
+              <p class="card-text">{{description}}</p>
+              <div class="d-flex justify-content-end align-items-center">
+        
+                <h4>{{price}}.0sum</h4>
+              </div>
+              <div>{{formatDate createdAt}}</div>
+            </div>
+            <div class="card-footer d-flex">
+              <div class="d-flex justify-content-center gap-3">
+                {{#if @root.token}}
+                {{#ifequal user @root.userId}}
+              <a type="button" class="btn btn-success" href='/edit-product/{{_id}}'>Edit</a>
+              <form action="/delete-product/{{_id}}" method="post">
+               <button type="submit"  class="btn btn-danger">Delete</button>
+               </form>
+               {{/ifequal}}
+               {{/if}}
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {{/each}}
+</div>
+{{else}}
+<section class='page_404 w-75 mx-auto'>
+		<div class='row'>
+			<div class='col-sm-12'>
+				<div class='col-sm-10 col-sm-offset-1 text-center'>
+					<div class='four_zero_four_bg'>
+						<h1 class='text-center'>404</h1>
+					</div>
+					<div class='contant_box_404'>
+						<h3 class='h2'>Add new products</h3>
+						<a href='/add' class='btn btn-primary btn-lg mb-5'>Add products</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{{/if}}
+
+
+
+     
+    

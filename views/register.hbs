@@ -1,0 +1,49 @@
+<div class='row'>
+	<div class='col-md-6'>
+		<div class='mt-10rem'>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+{{#if registerError}}
+<div class="alert alert-danger alert-dismissible fade show danger" role="alert">
+  <strong>Error</strong>{{registerError}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<form action="/register" method="post">
+
+       <div class="form-floating">
+      <input type="text" class="form-control" name="firstname" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">First Name</label>
+    </div>
+       <div class="form-floating">
+      <input type="" class="form-control" name="lastname" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Last Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+       <div class="form-floating">
+      <input type="number" class="form-control" name="number" id="floatingPassword" placeholder="Number">
+      <label for="floatingPassword">Phone number</label>
+    </div>
+     <div class="form-check text-start my-3">
+      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+  </form>
+  </div>
+  </div>
+	<div class='col-md-6'>
+		<img src='/sign.jpg' width='100%' alt='' />
+	</div>
+</div>
